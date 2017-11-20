@@ -32,4 +32,8 @@ export class DetailCollegueComponent implements OnInit {
       .then(col => this.collegue = col)
   }
 
+  back(){
+    history.back()
+  }
+
 }

@@ -40,7 +40,6 @@ export class CollegueService {
     return this.http.put<Collegue>(environment.apiUrl + '/collegues/' + unCollegue.nom + '/score', -5, httpOptions).toPromise()
   }
 
-
   supprimer(collegue: Collegue) {
     //TODO
   }
