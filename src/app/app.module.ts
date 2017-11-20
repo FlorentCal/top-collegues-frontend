@@ -15,6 +15,8 @@ import { ConteneurComponent } from './conteneur/conteneur.component';
 import { CarrouselComponent } from './carrousel/carrousel.component';
 import { UnCollegueCarrouselComponent } from './un-collegue-carrousel/un-collegue-carrousel.component';
 import { DetailCollegueComponent } from './detail-collegue/detail-collegue.component';
+import { ScorePipe } from './shared/pipe/score/score.pipe';
+import { FiltrePipe } from './shared/pipe/filtre/filtre.pipe';
 
 const appRoutes: Routes = [
   { path: 'classique', component: ClassiqueComponent },
@@ -35,7 +37,9 @@ const appRoutes: Routes = [
     ConteneurComponent,
     CarrouselComponent,
     UnCollegueCarrouselComponent,
-    DetailCollegueComponent
+    DetailCollegueComponent,
+    ScorePipe,
+    FiltrePipe
   ],
   imports: [
     BrowserModule,

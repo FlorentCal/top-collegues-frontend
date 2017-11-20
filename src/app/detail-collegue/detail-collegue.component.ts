@@ -20,16 +20,19 @@ export class DetailCollegueComponent implements OnInit {
     this._route.params.subscribe(params => {
       this._collegueService.trouverCollegue(params['nom'])
                             .then(col => { this.collegue = col })
+                            .catch(exception => console.log(exception))
     })
   }
 
   jaime() {
     this._collegueService.aimerUnCollegue(this.collegue)
       .then(col => this.collegue = col)
+      .catch(exception => console.log(exception))
   }
   jedeteste() {
     this._collegueService.detesterUnCollegue(this.collegue)
       .then(col => this.collegue = col)
+      .catch(exception => console.log(exception))
   }
 
   back(){

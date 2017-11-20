@@ -20,7 +20,7 @@
     <ngb-alert class="col-11" *ngIf="successMessage" type="success" (close)="successMessage = null">{{ successMessage }}</ngb-alert>
     <ngb-alert class="col-11" *ngIf="errorMessage" type="danger" (close)="errorMassage = null">{{ errorMessage }}</ngb-alert>
   </div>
-  <nav>
+  <nav class="top">
     <button type="button" class="btn btn-primary" routerLink="/classique" RouterLinkActive="active-link">Classique</button>
     <button type="button" class="btn btn-primary" routerLink="/tableau" RouterLinkActive="active-link">Tableau</button>
     <button type="button" class="btn btn-primary" routerLink="/carrousel" RouterLinkActive="active-link">Carrousel</button>

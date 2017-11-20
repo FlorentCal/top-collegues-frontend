@@ -14,4 +14,5 @@ export class ClassiqueComponent extends ConteneurComponent implements OnInit {
     super(collegueService)
    }
 
+
 }

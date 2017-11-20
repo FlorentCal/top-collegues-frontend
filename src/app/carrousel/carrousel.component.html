@@ -1,8 +1,16 @@
 <div class="container">
-  <div class="row">
+  <div class="row top">
+    <div class="input-group-addon col-2">Limite</div>
+    <input type="number" min="0" class="form-control col" (input)="changerLimite($event)">
+  </div>
+  <div class="row top">
+    <div class="input-group-addon col-2">Filtre par pseudo</div>
+    <input type="text" class="form-control col" (keyup)="filtrerPseudo($event)">
+  </div>
+  <div class="row top">
     <div class="col-8 offset-2">
       <ngb-carousel class="text-center">
-        <ng-template ngbSlide *ngFor='let collegue of collegues'>
+        <ng-template ngbSlide *ngFor='let collegue of collegues | slice:0:limite | filtre:filtre'>
           <app-un-collegue-carrousel [collegue]="collegue"></app-un-collegue-carrousel>
         </ng-template>
       </ngb-carousel>

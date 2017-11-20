@@ -10,13 +10,24 @@ import { CollegueService } from '../shared/service/collegue.service';
 export class ConteneurComponent implements OnInit {
 
   collegues: Collegue[]
+  public limite: number
+  public filtre: string
 
-  constructor(private _collegueService: CollegueService) { }
+  constructor(private _collegueService: CollegueService) {
+  }
 
   ngOnInit() {
     this._collegueService.listerCollegues()
       .then(data => { return this.collegues = data })
       .catch(exception => console.log(exception))
+  }
+
+  changerLimite($event) {
+    this.limite = <number>$event.target.value
+  }
+
+  filtrerPseudo($event) {
+    this.filtre = $event.target.value
   }
 
 }

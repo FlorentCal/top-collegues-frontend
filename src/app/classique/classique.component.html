@@ -1,5 +1,16 @@
+<div class="container">
+  <div class="row top">
+    <div class="input-group-addon col-2">Limite</div>
+    <input type="number" min="0" class="form-control col" (input)="changerLimite($event)">
+  </div>
+  <div class="row top">
+    <div class="input-group-addon col-2">Filtre par pseudo</div>
+    <input type="text" class="form-control col" (keyup)="filtrerPseudo($event)">
+  </div>
+</div>
 <div class="row">
-  <div *ngFor='let collegue of collegues' class="col-3">
+  <div class="col-3" *ngFor="let collegue of collegues | slice:0:limite | filtre:filtre">
+
     <div class="card top" style="width: 25em; height: 33rem">
       <!-- TODO boutton supprimer>
       <button type="button" class="close text-right" aria-label="Close" (click)="supprimer(collegue)">

@@ -1,9 +1,9 @@
 <div (click)="displayDetail()">
-  <img class="img-responsive mx-auto d-block round" [src]="collegue.url" [alt]="collegue.nom" height="355rem" width="355rem">
+  <img class="img-responsive mx-auto d-block round top" [src]="collegue.url" [alt]="collegue.nom" height="355rem" width="355rem">
 
   <div class="card-body">
-    <h4 class="card-title center">{{collegue.nom}}</h4>
-    <p class="card-text center">{{collegue.score}}</p>
+    <h4 class="card-title center">{{collegue.nom | uppercase}}</h4>
+    <p class="card-text center" [innerHTML]="collegue.score | score"></p>
   </div>
 </div>
 <div class="container">
