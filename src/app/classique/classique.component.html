@@ -1,0 +1,10 @@
+<div class="row">
+  <div *ngFor='let collegue of collegues' class="col-3">
+    <div class="card top" style="width: 25em; height: 33rem">
+      <button type="button" class="close text-right" aria-label="Close" (click)="supprimer(collegue)">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <app-un-collegue-classique [collegue]="collegue"></app-un-collegue-classique>
+    </div>
+  </div>
+</div>

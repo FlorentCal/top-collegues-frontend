@@ -1,0 +1,15 @@
+<th scope="row" (click)="displayDetail()">
+  <img class="img-responsive mx-auto d-block round" [src]="collegue.url" [alt]="collegue.nom" height="100rem" width="100rem">
+</th>
+<td class="align-middle" (click)="displayDetail()">{{collegue.nom}}</td>
+<td class="align-middle" (click)="displayDetail()">{{collegue.score}}</td>
+<td class="align-middle">
+  <div class="row">
+    <div class="col-4">
+      <button type="button" class="btn btn-primary btn-block" (click)="jaime()">J'aime</button>
+    </div>
+    <div class="col-4">
+      <button type="button" class="btn btn-danger btn-block " (click)="jedeteste()">Je déteste</button>
+    </div>
+  </div>
+</td>

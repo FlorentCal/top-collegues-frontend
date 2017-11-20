@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row">
+    <div class="col-8 offset-2">
+      <ngb-carousel class="text-center">
+        <ng-template ngbSlide *ngFor='let collegue of collegues'>
+          <app-un-collegue-carrousel [collegue]="collegue"></app-un-collegue-carrousel>
+        </ng-template>
+      </ngb-carousel>
+    </div>
+  </div>
+</div>

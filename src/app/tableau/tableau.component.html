@@ -1,0 +1,14 @@
+<table class="table table-striped table-bordered top">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Pseudo</th>
+      <th>Score</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr app-un-collegue-tableau *ngFor='let collegue of collegues' [collegue]="collegue"></tr>
+  </tbody>
+</table>

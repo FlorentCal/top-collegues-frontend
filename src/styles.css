@@ -1,0 +1,40 @@
+.right{
+    text-align: right;
+    align-self: center;
+}
+
+.round{
+    border-radius: 100%;
+}
+
+.center{
+    text-align: center;
+}
+
+.top{
+    margin-top: 2%;
+}
+
+.top-low{
+    margin-top: 1%;
+}
+
+.bottom{
+    margin-bottom: 2%;
+}
+
+.big-font{
+    font-size: 100px;
+}
+
+.responsive{
+    object-fit:cover;
+    height:50rem !important;
+    width:50rem;
+}
+
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+ }

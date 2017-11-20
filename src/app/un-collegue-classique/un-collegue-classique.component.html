@@ -1,0 +1,18 @@
+<div (click)="displayDetail()">
+  <img class="img-responsive mx-auto d-block round" [src]="collegue.url" [alt]="collegue.nom" height="355rem" width="355rem">
+
+  <div class="card-body">
+    <h4 class="card-title center">{{collegue.nom}}</h4>
+    <p class="card-text center">{{collegue.score}}</p>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <button type="button" class="btn btn-primary btn-block" (click)="jaime()">J'aime</button>
+    </div>
+    <div class="col-6">
+      <button type="button" class="btn btn-danger btn-block " (click)="jedeteste()">Je déteste</button>
+    </div>
+  </div>
+</div>

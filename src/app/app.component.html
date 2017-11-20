@@ -1,0 +1,31 @@
+<div class="container-fluid">
+  <h1 class="top">Top Collègues</h1>
+  <h6 class="top">Les meilleurs collègues du moment</h6>
+  <div class="row top">
+    <label class="control-label col-sm-1 right" for="pseudo">Pseudo :</label>
+    <div class="col-sm-10">
+      <input type="text" #pseudo class="form-control" placeholder="Pseudo">
+    </div>
+  </div>
+  <div class="row">
+    <label class="control-label col-sm-1 right" for="URLimage">URL image :</label>
+    <div class="col-sm-10">
+      <input type="text" #imageUrl class="form-control" placeholder="URL image">
+    </div>
+    <div class="col-11">
+      <button type="button" class="btn btn-primary float-right top-low" (click)="add(pseudo, imageUrl)">Ajouter un nouveau collègue</button>
+    </div>
+  </div>
+  <div class="row">
+    <ngb-alert class="col-11" *ngIf="successMessage" type="success" (close)="successMessage = null">{{ successMessage }}</ngb-alert>
+    <ngb-alert class="col-11" *ngIf="errorMessage" type="danger" (close)="errorMassage = null">{{ errorMessage }}</ngb-alert>
+  </div>
+  <nav>
+    <button type="button" class="btn btn-primary" routerLink="/classique" RouterLinkActive="active-link">Classique</button>
+    <button type="button" class="btn btn-primary" routerLink="/tableau" RouterLinkActive="active-link">Tableau</button>
+    <button type="button" class="btn btn-primary" routerLink="/carrousel" RouterLinkActive="active-link">Carrousel</button>
+  </nav>
+  <div id="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

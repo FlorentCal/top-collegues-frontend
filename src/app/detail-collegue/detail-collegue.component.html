@@ -1,0 +1,15 @@
+<div class="container bottom">
+  <img [src]="collegue.url" [alt]="collegue.nom" class="responsive center-block">
+  <div>
+    <h1 class="big-font text-center">{{collegue.nom}}</h1>
+    <h1 class="text-center">{{collegue.score}}</h1>
+    <div class="row">
+      <div class="col-6">
+        <button type="button" class="btn btn-primary btn-block" (click)="jaime()">J'aime</button>
+      </div>
+      <div class="col-6">
+        <button type="button" class="btn btn-danger btn-block " (click)="jedeteste()">Je déteste</button>
+      </div>
+    </div>
+  </div>
+</div>
