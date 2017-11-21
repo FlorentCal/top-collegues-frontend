@@ -17,17 +17,24 @@ export class ConteneurComponent implements OnInit {
   }
 
   ngOnInit() {
-    this._collegueService.listerCollegues()
-      .then(data => { return this.collegues = data })
-      .catch(exception => console.log(exception))
+    this._collegueService.listerCollegues().subscribe(data => this.collegues = data)
   }
 
   changerLimite($event) {
-    this.limite = <number>$event.target.value
+    if($event.target.value == ''){
+      this.limite = this.collegues.length
+    } else {
+      this.limite = <number>$event.target.value
+    }
+    
   }
 
   filtrerPseudo($event) {
     this.filtre = $event.target.value
+  }
+
+  supprimer(collegue: Collegue){
+    this._collegueService.supprimer(collegue)
   }
 
 }

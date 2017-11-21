@@ -19,12 +19,15 @@ export class AppComponent implements OnInit {
 
   staticAlertClosed = false
 
+  enableButton: boolean
+
   constructor(private _collegueService: CollegueService) {
 
   }
 
   ngOnInit() {
     
+    this._collegueService.obtenirConnexion().subscribe(etat=> this.enableButton = etat)
     setTimeout(() => this.staticAlertClosed = true, 20000)
 
     this._error.subscribe((message) => this.errorMessage = message)
@@ -37,7 +40,7 @@ export class AppComponent implements OnInit {
   add(pseudo: HTMLInputElement, imageUrl: HTMLInputElement) {
 
     this._collegueService.sauvegarder(new Collegue(pseudo.value, imageUrl.value, 0))
-    .then(collegue => {
+    .subscribe(collegue => {
       this._success.next(`Le collègue ${collegue.nom} a été ajouté avec succès`)
       pseudo.value = ''
       imageUrl.value = ''

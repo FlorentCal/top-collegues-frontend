@@ -1,31 +1,44 @@
 <div class="container-fluid">
-  <h1 class="top">Top Collègues</h1>
-  <h6 class="top">Les meilleurs collègues du moment</h6>
-  <div class="row top">
-    <label class="control-label col-sm-1 right" for="pseudo">Pseudo :</label>
-    <div class="col-sm-10">
-      <input type="text" #pseudo class="form-control" placeholder="Pseudo">
+  <div class="background-grey round-border">
+    <div class="nav-margin">
+      <div class="row">
+        <div class="col">
+          <app-connexion></app-connexion>
+        </div>
+      </div>
+      <h1>Top Collègues</h1>
+      <h6 class="top">Les meilleurs collègues du moment</h6>
+      <div class="row top">
+        <label class="control-label col-sm-1 right" for="pseudo">Pseudo :</label>
+        <div class="col">
+          <input type="text" #pseudo class="form-control" placeholder="Pseudo">
+        </div>
+      </div>
+      <div class="row">
+        <label class="control-label col-sm-1 right" for="URLimage">URL image :</label>
+        <div class="col">
+          <input type="text" #imageUrl class="form-control" placeholder="URL image">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <button type="button" class="btn btn-primary float-right top-low" (click)="add(pseudo, imageUrl)" [disabled]="!enableButton">Ajouter un nouveau collègue</button>
+        </div>
+      </div>
+      <div class="row top-low">
+        <ngb-alert class="col" *ngIf="successMessage" type="success" (close)="successMessage = null">{{ successMessage }}</ngb-alert>
+        <ngb-alert class="col" *ngIf="errorMessage" type="danger" (close)="errorMassage = null">{{ errorMessage }}</ngb-alert>
+      </div>
+      <nav class="top-low">
+        <button type="button" class="btn btn-primary" routerLink="/classique" RouterLinkActive="active-link">Classique</button>
+        <button type="button" class="btn btn-primary" routerLink="/tableau" RouterLinkActive="active-link">Tableau</button>
+        <button type="button" class="btn btn-primary" routerLink="/carrousel" RouterLinkActive="active-link">Carrousel</button>
+      </nav>
     </div>
   </div>
-  <div class="row">
-    <label class="control-label col-sm-1 right" for="URLimage">URL image :</label>
-    <div class="col-sm-10">
-      <input type="text" #imageUrl class="form-control" placeholder="URL image">
-    </div>
-    <div class="col-11">
-      <button type="button" class="btn btn-primary float-right top-low" (click)="add(pseudo, imageUrl)">Ajouter un nouveau collègue</button>
-    </div>
-  </div>
-  <div class="row">
-    <ngb-alert class="col-11" *ngIf="successMessage" type="success" (close)="successMessage = null">{{ successMessage }}</ngb-alert>
-    <ngb-alert class="col-11" *ngIf="errorMessage" type="danger" (close)="errorMassage = null">{{ errorMessage }}</ngb-alert>
-  </div>
-  <nav class="top">
-    <button type="button" class="btn btn-primary" routerLink="/classique" RouterLinkActive="active-link">Classique</button>
-    <button type="button" class="btn btn-primary" routerLink="/tableau" RouterLinkActive="active-link">Tableau</button>
-    <button type="button" class="btn btn-primary" routerLink="/carrousel" RouterLinkActive="active-link">Carrousel</button>
-  </nav>
+  <app-votre-dernier-avis></app-votre-dernier-avis>
   <div id="content">
     <router-outlet></router-outlet>
   </div>
+  <app-votre-dernier-avis></app-votre-dernier-avis>
 </div>

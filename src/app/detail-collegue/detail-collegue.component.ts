@@ -12,30 +12,30 @@ import { ActivatedRoute } from '@angular/router';
 export class DetailCollegueComponent implements OnInit {
 
   collegue: Collegue
-  constructor(private _collegueService: CollegueService, private _route: ActivatedRoute) { 
+  constructor(private _collegueService: CollegueService, private _route: ActivatedRoute) {
 
   }
 
   ngOnInit() {
     this._route.params.subscribe(params => {
       this._collegueService.trouverCollegue(params['nom'])
-                            .then(col => { this.collegue = col })
-                            .catch(exception => console.log(exception))
+        .subscribe(col => { this.collegue = col },
+        exception => console.log(exception))
     })
   }
 
   jaime() {
     this._collegueService.aimerUnCollegue(this.collegue)
-      .then(col => this.collegue = col)
-      .catch(exception => console.log(exception))
+      .subscribe(col => { this.collegue = col },
+      exception => console.log(exception))
   }
   jedeteste() {
     this._collegueService.detesterUnCollegue(this.collegue)
-      .then(col => this.collegue = col)
-      .catch(exception => console.log(exception))
+      .subscribe(col => { this.collegue = col },
+      exception => console.log(exception))
   }
 
-  back(){
+  back() {
     history.back()
   }
 

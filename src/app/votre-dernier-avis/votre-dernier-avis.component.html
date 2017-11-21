@@ -1,0 +1,2 @@
+<ngb-alert *ngIf="avis != undefined && avis.aimer" type="success" [dismissible]="false">J'aime {{avis.collegue.nom}}</ngb-alert>
+<ngb-alert *ngIf="avis != undefined && !avis.aimer" type="danger" [dismissible]="false">Je n'aime pas {{avis.collegue.nom}}</ngb-alert>

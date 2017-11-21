@@ -12,25 +12,32 @@ import { Router } from '@angular/router';
 export class UnCollegueComponent implements OnInit {
 
   @Input() collegue: Collegue;
+  enableButton: boolean
   constructor(private _collegueService: CollegueService, private router: Router) {
 
   }
 
   ngOnInit() {
-
+    this._collegueService.obtenirConnexion().subscribe(etat=> this.enableButton = etat)
   }
 
   jaime() {
     this._collegueService.aimerUnCollegue(this.collegue)
-      .then(col => this.collegue = col)
-      .catch(exception => console.log(exception))
+      .subscribe(col => this.collegue = col,
+      exception => console.log(exception))
   }
   jedeteste() {
     this._collegueService.detesterUnCollegue(this.collegue)
-      .then(col => this.collegue = col)
+      .subscribe(col => this.collegue = col,
+      exception => console.log(exception))
   }
 
-  displayDetail(){
+  displayDetail() {
     this.router.navigate([`/detail/${this.collegue.nom}`])
   }
+
+  supprimer(collegue: Collegue){
+    this._collegueService.supprimer(collegue)
+  }
+
 }

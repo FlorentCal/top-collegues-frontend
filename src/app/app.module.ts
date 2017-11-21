@@ -17,6 +17,8 @@ import { UnCollegueCarrouselComponent } from './un-collegue-carrousel/un-collegu
 import { DetailCollegueComponent } from './detail-collegue/detail-collegue.component';
 import { ScorePipe } from './shared/pipe/score/score.pipe';
 import { FiltrePipe } from './shared/pipe/filtre/filtre.pipe';
+import { VotreDernierAvisComponent } from './votre-dernier-avis/votre-dernier-avis.component';
+import { ConnexionComponent } from './connexion/connexion.component';
 
 const appRoutes: Routes = [
   { path: 'classique', component: ClassiqueComponent },
@@ -39,7 +41,9 @@ const appRoutes: Routes = [
     UnCollegueCarrouselComponent,
     DetailCollegueComponent,
     ScorePipe,
-    FiltrePipe
+    FiltrePipe,
+    VotreDernierAvisComponent,
+    ConnexionComponent
   ],
   imports: [
     BrowserModule,
